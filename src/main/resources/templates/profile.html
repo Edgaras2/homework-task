@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<style>
+.infoLine {
+	display: inline-block;
+			}
+
+.noUnderScore {
+	text-decoration:none;
+
+
+}
+body{background-color: lightblue}
+</style>
+</head>
+<body>
+
+	<th:block th:if="${user}">
+		<br>
+			Welcome: <div class=infoLine th:text="${user.userName}"></div>
+		<br>
+	</th:block>
+
+	<th:block th:if="${user.artist}">
+		<br>
+			Your favorite artists is: <div class=infoLine th:text="${user.artist.artistName}"></div>
+		<br>
+	</th:block>
+
+	<th:block th:unless="${user.artist}">
+		<br>
+			Please choice your favorite artist</div>
+		<br>
+	</th:block>
+
+
+	<a th:href="'/searchArtist'">
+		<button type="button">Search Artist</button>
+	</a>
+
+	<a th:href="'/topAlbums'">
+		<button type="button">Favorite Artist TOP 5 Songs</button>
+	</a>
+
+	<form th:action="@{/logout}" method="post">
+		<input type="submit" value="Logout" />
+	</form>
+
+</body>
+</html>

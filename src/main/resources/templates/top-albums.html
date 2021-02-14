@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<style>
+.infoLine {
+	display: inline-block;
+			}
+
+.noUnderScore {
+	text-decoration:none;
+
+
+}
+body{background-color: lightblue}
+</style>
+</head>
+<body>
+Top Albums:
+
+	<table th:if="${topAlbums}">
+
+		<tr class="table-info">
+			<td><b>Artist Name</b></td>
+			<td><b>Genre</b></td>
+			<td><b>Collection Name</b></td>
+			<td><b>Price</b></td>
+		</tr>
+
+		<th:block th:each="topAlbum : ${topAlbums}">
+			<tr>
+				<td th:text="${topAlbum.artistName}"></td>
+				<td th:text="${topAlbum.genre}"></td>
+				<td th:text="${topAlbum.collectionName}"></td>
+				<td th:text="${topAlbum.collectionPrice}"></td>
+			</tr>
+		</th:block>
+	</table>
+
+	<a th:href="'/profile'">
+		<button type="button">Back to Profile</button>
+	</a>
+
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<style>
+.infoLine {
+	display: inline-block;
+			}
+
+.noUnderScore {
+	text-decoration:none;
+
+
+}
+body{background-color: lightblue}
+</style>
+</head>
+<body>
+	Create User
+	<form action="#" th:action="@{/save}" method="post" th:object="${user}">
+		User Name: <input type="text" th:field="*{userName}"/>
+		<input type="submit"/>
+	</form>
+
+</body>
+</html>
