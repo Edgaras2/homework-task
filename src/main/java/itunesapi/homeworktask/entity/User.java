@@ -11,7 +11,7 @@ public class User {
     @GeneratedValue
     private Long id;
 
-    @Column(name ="USER_NAME")
+    @Column(name = "USER_NAME")
     private String userName;
 
     @OneToOne(cascade = CascadeType.ALL)
